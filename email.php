@@ -48,6 +48,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     mysqli_query($connect,$strSQL) or die (mysqli_error($connect,$strSQL));
 
-    echo $message; 
+    $strSQL = "SELECT * FROM `mail` WHERE id = (SELECT MAX(id) FROM `mail`); ";
+	
+	$strSQL = mysqli_query($connect,$strSQL);
+    $strSQL = mysqli_fetch_all($strSQL);
+    foreach ($strSQL as $elm) {
+        
+        echo '
+        <div class = "form-zvonok">
+        <lable>'.$elm[1].'<lable>
+        <hr class="style-one">
+        <lable>'.$elm[2].'</lable>
+        <hr class="style-one">
+        <lable>'.$elm[3].'</lable>
+        <hr class="style-one">
+        <lable>'.$elm[4].'</lable>
+        <hr class="style-one">
+        <lable>'.$elm[5].'</lable>
+        </div>  
+        ';
+    }
 
 ?>

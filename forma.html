@@ -20,8 +20,8 @@
           <input type="text" name="username" required>
         </div>
         <div>
-          <label>Номер телефона (с кодом) <span>*</span></label>
-          <input type="tel" name="usernumber" required>
+          <label>Номер телефона (в ормате 8хххххххххх) <span>*</span></label>
+          <input type="tel" pattern="[0-9]{11}" name="usernumber" required>
         </div>
         <div>
           <label>Адрес </label>
