@@ -52,7 +52,7 @@
     mysqli_query($connect,"SET NAMES 'utf8'");
     $sql = mysqli_query($connect, 'SELECT * FROM `mail`');
     $sql = mysqli_fetch_all($sql);
-    foreach ($sql as $elm) {
+    foreach (array_reverse($sql) as $elm) {
       echo '
       <div id="form">
       <div class = "form-zvonok">
