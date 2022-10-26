@@ -10,10 +10,11 @@ $(document).ready(function () {
                 $('#result').html('<p style="text-align:center">Отправка...</p>');
             },
             success: function (data) {
-                $('#result').html('<div class="form-zvonok" id ="form">' + data + '</div>');
+                alert("Сообщение отправлено")
             },
             error: function (jqXHR, text, error) {
                 $('#result').html(error);
+                
             }
         });
         return false;

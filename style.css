@@ -1,3 +1,8 @@
+.all {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
     #form {
         width: 100%;
         max-width: 355px;
@@ -7,9 +12,7 @@
         margin: 0 auto;
         margin-top: 5%;
         padding-bottom: 5%;
-
     }
-
     hr.style-one {
         border: 0;
         height: 1px;
