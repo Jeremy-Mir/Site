@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,8 @@
         
 <?php
 include ("connect.php");
+$sql = mysqli_query($connect, 'SELECT * FROM `news`');
+$sql = mysqli_fetch_all($sql);
 foreach ($sql as $elm) {
         
     echo '
