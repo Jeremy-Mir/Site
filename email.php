@@ -32,9 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Не удалось отправить сообщение..."; 
         echo $message; 
     }*/
-    $strSQL = "INSERT INTO `mail`(`name`, `address`, `number`, `mail`, `text`) VALUES ('$username','$useraddress','$usernumber','$usermail','$question')";
+    $strSQL = "INSERT INTO `mail`(`name`, `number`, `address`, `mail`, `text`) VALUES ('$username','$usernumber','$useraddress','$usermail','$question')";
     
-    $connect = mysqli_connect('localhost','root','','news');
+    $connect = mysqli_connect('localhost','cp75453_bd','33Rfrfle','cp75453_bd');
     mysqli_query($connect,"SET NAMES 'utf8'");
     if ($connect == false){
         print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
