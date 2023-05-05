@@ -45,22 +45,18 @@
   <div class="all" ><label >Все сообщения</label><hr class="style-one"></div>    
 
   <?php
-  $connect = mysqli_connect('localhost','root','','news');
-    if ($connect == false){
-        print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
-    }
-    mysqli_query($connect,"SET NAMES 'utf8'");
+include ("connect.php");
     $sql = mysqli_query($connect, 'SELECT * FROM `mail`');
     $sql = mysqli_fetch_all($sql);
     foreach (array_reverse($sql) as $elm) {
       echo '
       <div id="form">
       <div class = "form-zvonok">
-        <div><label for="">'.$elm[1].'</label><hr class="style-one"></div>
+      	<div><label for="">'.$elm[0].'</label><hr class="style-one"></div>
         <div><label for="">'.$elm[2].'</label><hr class="style-one"></div>
+        <div><label for="">'.$elm[1].'</label><hr class="style-one"></div>
         <div><label for="">'.$elm[3].'</label><hr class="style-one"></div>
-        <div><label for="">'.$elm[4].'</label><hr class="style-one"></div>
-        <div><textarea for="" disabled="disabled">'.$elm[5].'</textarea></div>
+        <div><textarea for="" disabled="disabled">'.$elm[4].'</textarea></div>
       </div> 
       </div> 
       ';
