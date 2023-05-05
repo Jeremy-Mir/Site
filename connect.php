@@ -32,16 +32,13 @@
             
              return $result;
         }
-    $connect = mysqli_connect('localhost','root','','news');
+    $connect = mysqli_connect('localhost','cp75453_bd','33Rfrfle','cp75453_bd');
     if ($connect == false){
         print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
     }
 
     mysqli_query($connect,"SET NAMES 'utf8'");
-    $sql = mysqli_query($connect, 'SELECT * FROM `object`');
-    $sql = mysqli_fetch_all($sql);
-    
-    
+
 
 
 
